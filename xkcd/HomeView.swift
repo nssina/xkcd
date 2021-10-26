@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var comics = ComicsModel()
+    @StateObject var homeVM = HomeViewModel()
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "xkcd", size: 34)!]
@@ -19,24 +19,15 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: -20) {
-                    ForEach(comics, id:\.id) { item in
+                    ForEach(homeVM.comics, id:\.id) { item in
                         ComicCardView(comic: item)
+                            .onAppear {
+                                homeVM.loadMoreContent(currentItem: item)
+                            }
                     }
                 }
             }
             .navigationBarTitle("xkcd")
-            .onAppear(perform: getComics)
-        }
-    }
-    
-    func getComics() {
-        NetworkManager.shared.getComics(since: 2499) { result in
-            switch result {
-            case .success(let comics):
-                self.comics = comics.reversed()
-            case .failure(let error):
-                print(error)
-            }
         }
     }
 }
