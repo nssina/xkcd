@@ -9,26 +9,35 @@ import SwiftUI
 
 struct ComicCardView: View {
     var body: some View {
-        VStack(spacing: 10) {
-            ComicImage()
+        ZStack {
+            Color(.secondarySystemBackground)
+                .cornerRadius(12)
             
-            ActionAndNumberView()
-            
-            ComicTitleAndDescriptionView()
-            
-            Button {
+            VStack(spacing: 10) {
                 
-            } label: {
-                HStack {
-                    Text("Explanation")
-                        .bold()
-                        .foregroundColor(.blue)
-                    SFSymbols.arrow
-                        .font(Font.body.weight(.bold))
-                        .foregroundColor(.blue)
+                ComicImage()
+                
+                ActionAndNumberView()
+                
+                ComicTitleAndDescriptionView()
+                
+                Button {
+                    
+                } label: {
+                    HStack {
+                        Text("Explanation")
+                            .bold()
+                            .foregroundColor(.blue)
+                        Image(systemName: SFSymbols.arrow)
+                            .font(Font.body.weight(.bold))
+                            .foregroundColor(.blue)
+                        
+                        Spacer()
+                    }
                 }
-                Spacer()
             }
+            .padding()
+            .frame(height: 500)
         }
         .padding()
         .frame(height: 500)
@@ -56,7 +65,7 @@ struct ActionsView: View {
             Button {
                 
             } label: {
-                SFSymbols.favorite
+                Image(systemName: SFSymbols.favorite)
                     .resizable()
                     .foregroundColor(.primary)
                     .frame(width: 25, height: 25)
@@ -65,7 +74,7 @@ struct ActionsView: View {
             Button {
                 
             } label: {
-                SFSymbols.send
+                Image(systemName: SFSymbols.send)
                     .resizable()
                     .foregroundColor(.primary)
                     .frame(width: 25, height: 25)
