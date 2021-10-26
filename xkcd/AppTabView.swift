@@ -12,15 +12,15 @@ struct AppTabView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    SFSymbols.comics
+                    Label("Home", systemImage: SFSymbols.comics)
                 }
             SearchView()
                 .tabItem {
-                    SFSymbols.search
+                    Label("Search", systemImage: SFSymbols.search)
                 }
             FavoritesView()
                 .tabItem {
-                    SFSymbols.favorite
+                    Label("Favorites", systemImage: SFSymbols.fillFavorite)
                 }
         }
         .accentColor(.primary)
