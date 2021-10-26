@@ -9,9 +9,10 @@ import Foundation
 import SwiftUI
 
 enum SFSymbols {
-    static let comics = Image(systemName: "rectangle.3.group.bubble.left")
-    static let search = Image(systemName: "magnifyingglass")
-    static let favorite = Image(systemName: "star")
-    static let send = Image(systemName: "paperplane")
-    static let arrow = Image(systemName: "arrow.forward")
+    static let comics = "rectangle.3.offgrid.bubble.left.fill"
+    static let search = "magnifyingglass"
+    static let favorite = "star"
+    static let fillFavorite = "star.fill"
+    static let send = "paperplane"
+    static let arrow = "arrow.forward"
 }
