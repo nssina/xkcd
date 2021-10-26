@@ -22,7 +22,6 @@
 		D35199662728301B001B2DBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35199652728301B001B2DBA /* Constants.swift */; };
 		D351996827283667001B2DBA /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351996727283667001B2DBA /* Color+Ext.swift */; };
 		D351996A272840F0001B2DBA /* ComicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3519969272840F0001B2DBA /* ComicCardView.swift */; };
-		D351996C27284541001B2DBA /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351996B27284541001B2DBA /* NavigationBarView.swift */; };
 		D3519971272845D6001B2DBA /* xkcd.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3519970272845D6001B2DBA /* xkcd.otf */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		D35199652728301B001B2DBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D351996727283667001B2DBA /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		D3519969272840F0001B2DBA /* ComicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCardView.swift; sourceTree = "<group>"; };
-		D351996B27284541001B2DBA /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		D3519970272845D6001B2DBA /* xkcd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = xkcd.otf; sourceTree = "<group>"; };
 		D3519972272849CD001B2DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +116,6 @@
 				D3519972272849CD001B2DBA /* Info.plist */,
 				D351992E27282CF4001B2DBA /* xkcdApp.swift */,
 				D351995D27282D84001B2DBA /* AppTabView.swift */,
-				D351996B27284541001B2DBA /* NavigationBarView.swift */,
 				D35199652728301B001B2DBA /* Constants.swift */,
 				D351996727283667001B2DBA /* Color+Ext.swift */,
 				D351995F27282EBF001B2DBA /* HomeView.swift */,
@@ -292,7 +289,6 @@
 			files = (
 				D351993827282CF5001B2DBA /* Persistence.swift in Sources */,
 				D351992F27282CF4001B2DBA /* xkcdApp.swift in Sources */,
-				D351996C27284541001B2DBA /* NavigationBarView.swift in Sources */,
 				D351996827283667001B2DBA /* Color+Ext.swift in Sources */,
 				D351996227282EC5001B2DBA /* SearchView.swift in Sources */,
 				D351996427282FA8001B2DBA /* FavoritesView.swift in Sources */,
@@ -459,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
@@ -490,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
