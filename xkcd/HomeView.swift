@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "xkcd", size: 34)!]
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "xkcd", size: 17)!]
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                LazyVStack(spacing: 30) {
+                    ForEach(0..<10, id: \.self) { item in
+                        ComicCardView()
+                    }
+                }
+            }
+            .navigationBarTitle("xkcd")
+        }
     }
 }
 
