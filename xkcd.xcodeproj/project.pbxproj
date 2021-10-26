@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D351992F27282CF4001B2DBA /* xkcdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351992E27282CF4001B2DBA /* xkcdApp.swift */; };
-		D351993127282CF4001B2DBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351993027282CF4001B2DBA /* ContentView.swift */; };
 		D351993327282CF5001B2DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D351993227282CF5001B2DBA /* Assets.xcassets */; };
 		D351993627282CF5001B2DBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D351993527282CF5001B2DBA /* Preview Assets.xcassets */; };
 		D351993827282CF5001B2DBA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351993727282CF5001B2DBA /* Persistence.swift */; };
@@ -16,6 +15,11 @@
 		D351994527282CF6001B2DBA /* xkcdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351994427282CF6001B2DBA /* xkcdTests.swift */; };
 		D351994F27282CF6001B2DBA /* xkcdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351994E27282CF6001B2DBA /* xkcdUITests.swift */; };
 		D351995127282CF6001B2DBA /* xkcdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351995027282CF6001B2DBA /* xkcdUITestsLaunchTests.swift */; };
+		D351995E27282D84001B2DBA /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351995D27282D84001B2DBA /* AppTabView.swift */; };
+		D351996027282EBF001B2DBA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351995F27282EBF001B2DBA /* HomeView.swift */; };
+		D351996227282EC5001B2DBA /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351996127282EC5001B2DBA /* SearchView.swift */; };
+		D351996427282FA8001B2DBA /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351996327282FA8001B2DBA /* FavoritesView.swift */; };
+		D35199662728301B001B2DBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35199652728301B001B2DBA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 /* Begin PBXFileReference section */
 		D351992B27282CF4001B2DBA /* xkcd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xkcd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D351992E27282CF4001B2DBA /* xkcdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdApp.swift; sourceTree = "<group>"; };
-		D351993027282CF4001B2DBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D351993227282CF5001B2DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D351993527282CF5001B2DBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D351993727282CF5001B2DBA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +51,11 @@
 		D351994A27282CF6001B2DBA /* xkcdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xkcdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D351994E27282CF6001B2DBA /* xkcdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdUITests.swift; sourceTree = "<group>"; };
 		D351995027282CF6001B2DBA /* xkcdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D351995D27282D84001B2DBA /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		D351995F27282EBF001B2DBA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D351996127282EC5001B2DBA /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D351996327282FA8001B2DBA /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		D35199652728301B001B2DBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				D351992E27282CF4001B2DBA /* xkcdApp.swift */,
-				D351993027282CF4001B2DBA /* ContentView.swift */,
+				D351995D27282D84001B2DBA /* AppTabView.swift */,
+				D35199652728301B001B2DBA /* Constants.swift */,
+				D351995F27282EBF001B2DBA /* HomeView.swift */,
+				D351996127282EC5001B2DBA /* SearchView.swift */,
+				D351996327282FA8001B2DBA /* FavoritesView.swift */,
 				D351993227282CF5001B2DBA /* Assets.xcassets */,
 				D351993727282CF5001B2DBA /* Persistence.swift */,
 				D351993927282CF5001B2DBA /* xkcd.xcdatamodeld */,
@@ -264,9 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D351993827282CF5001B2DBA /* Persistence.swift in Sources */,
-				D351993127282CF4001B2DBA /* ContentView.swift in Sources */,
 				D351992F27282CF4001B2DBA /* xkcdApp.swift in Sources */,
+				D351996227282EC5001B2DBA /* SearchView.swift in Sources */,
+				D351996427282FA8001B2DBA /* FavoritesView.swift in Sources */,
+				D351996027282EBF001B2DBA /* HomeView.swift in Sources */,
 				D351993B27282CF5001B2DBA /* xkcd.xcdatamodeld in Sources */,
+				D351995E27282D84001B2DBA /* AppTabView.swift in Sources */,
+				D35199662728301B001B2DBA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -454,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
