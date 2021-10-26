@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ComicCardView: View {
+    var comic: ComicModel
+    
     var body: some View {
         ZStack {
             Color(.secondarySystemBackground)
@@ -15,11 +17,11 @@ struct ComicCardView: View {
             
             VStack(spacing: 10) {
                 
-                ComicImage()
+                ComicImage(url: comic.imgs[0].sourceURL)
                 
-                ActionAndNumberView()
+                ActionAndNumberView(number: comic.id)
                 
-                ComicTitleAndDescriptionView()
+                ComicTitleAndDescriptionView(title: comic.title, desc: comic.alt)
                 
                 Button {
                     
@@ -37,25 +39,22 @@ struct ComicCardView: View {
                 }
             }
             .padding()
-            .frame(height: 500)
         }
         .padding()
-        .frame(height: 500)
     }
 }
 
 struct ComicCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ComicCardView()
+        ComicCardView(comic: ComicModel(id: 0, publishedAt: "", news: "", safeTitle: "", title: "", transcript: "", alt: "", sourceURL: "", explainURL: "", interactiveURL: "", imgs: [ComicImageModel(height: 0, width: 0, ratio: 0.0, sourceURL: "", size: "")]))
     }
 }
 
 struct ComicImage: View {
+    var url: String
+    
     var body: some View {
-        Image("test")
-            .resizable()
-            .scaledToFill()
-            .cornerRadius(8)
+        AsyncImage(url)
     }
 }
 
@@ -84,10 +83,12 @@ struct ActionsView: View {
 }
 
 struct ComicNumberView: View {
+    var number: Int
+    
     var body: some View {
         ZStack {
             Color.bgOrange
-            Text("#2530")
+            Text("#\(number)")
                 .font(.system(size: 13, weight: .regular))
                 .foregroundColor(.orange)
         }
@@ -97,24 +98,29 @@ struct ComicNumberView: View {
 }
 
 struct ActionAndNumberView: View {
+    var number: Int
+    
     var body: some View {
         HStack {
             ActionsView()
             
             Spacer()
             
-            ComicNumberView()
+            ComicNumberView(number: number)
         }
     }
 }
 
 struct ComicTitleAndDescriptionView: View {
+    var title: String
+    var desc: String
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
-                Text("Censored Vaccine Card")
+                Text(title)
                     .font(.system(size: 20, weight: .bold))
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry...")
+                Text(desc)
                     .minimumScaleFactor(0.75)
                     .lineLimit(3)
             }
