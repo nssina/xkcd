@@ -19,7 +19,6 @@ struct ShareSheet: UIViewControllerRepresentable {
         let controller = UIActivityViewController(
             activityItems: activityItems,
             applicationActivities: applicationActivities)
-        controller.title = activityItems[0] as? String
         controller.excludedActivityTypes = excludedActivityTypes
         controller.completionWithItemsHandler = callback
         return controller
