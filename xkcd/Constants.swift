@@ -16,3 +16,7 @@ enum SFSymbols {
     static let send = "paperplane"
     static let arrow = "arrow.forward"
 }
+
+enum CustomFont {
+    static let xkcd = "xkcd"
+}

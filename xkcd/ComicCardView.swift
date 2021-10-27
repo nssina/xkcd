@@ -17,7 +17,7 @@ struct ComicCardView: View {
             Color(.secondarySystemBackground)
                 .cornerRadius(12)
             
-            VStack(spacing: 10) {
+            VStack(spacing: 15) {
                 
                 ComicImage(url: comic.imgs[0].sourceURL)
                 
@@ -31,7 +31,7 @@ struct ComicCardView: View {
                 } label: {
                     HStack {
                         Text("Explanation")
-                            .bold()
+                            .font(.custom(CustomFont.xkcd, size: 17))
                             .foregroundColor(.blue)
                         Image(systemName: SFSymbols.arrow)
                             .font(Font.body.weight(.bold))
@@ -99,10 +99,10 @@ struct ComicNumberView: View {
         ZStack {
             Color.bgOrange
             Text("#\(number)")
-                .font(.system(size: 13, weight: .regular))
+                .font(.custom(CustomFont.xkcd, size: 13))
                 .foregroundColor(.orange)
         }
-        .frame(width: 50, height: 25)
+        .frame(width: 60, height: 25)
         .cornerRadius(8)
     }
 }
@@ -128,10 +128,12 @@ struct ComicTitleAndDescriptionView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text(title)
-                    .font(.system(size: 20, weight: .bold))
+                    .bold()
+                    .font(.custom(CustomFont.xkcd, size: 20))
                 Text(desc)
+                    .font(.custom(CustomFont.xkcd, size: 15))
                     .minimumScaleFactor(0.75)
                     .lineLimit(3)
             }
