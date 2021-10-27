@@ -65,6 +65,8 @@ struct ComicImage: View {
 }
 
 struct ActionsView: View {
+    @State private var isShowingShareSheet = false
+    private let network = NetworkManager.shared
     
     var comic: ComicModel
     var id: Int
@@ -81,12 +83,16 @@ struct ActionsView: View {
             }
             
             Button {
-                
+                isShowingShareSheet.toggle()
+                HapticGenerator.shared.soft()
             } label: {
                 Image(systemName: SFSymbols.send)
                     .resizable()
                     .foregroundColor(.primary)
                     .frame(width: 25, height: 25)
+            }
+            .sheet(isPresented: $isShowingShareSheet) {
+                ShareSheet(activityItems: [network.loadImage(comic.imgs[0].sourceURL), comic.title, comic.alt])
             }
         }
     }

@@ -31,6 +31,7 @@
 		D3A721FC27291A4800ED26C7 /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A721FB27291A4800ED26C7 /* UINavigationBar+Ext.swift */; };
 		D3A721FE2729251200ED26C7 /* HapticGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A721FD2729251200ED26C7 /* HapticGenerator.swift */; };
 		D3A7220027296CC100ED26C7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A721FF27296CC100ED26C7 /* SafariView.swift */; };
+		D3A722022729779C00ED26C7 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A722012729779C00ED26C7 /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		D3A721FB27291A4800ED26C7 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
 		D3A721FD2729251200ED26C7 /* HapticGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticGenerator.swift; sourceTree = "<group>"; };
 		D3A721FF27296CC100ED26C7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		D3A722012729779C00ED26C7 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				D378110C2728A27A002EB1FE /* HomeViewModel.swift */,
 				D3519969272840F0001B2DBA /* ComicCardView.swift */,
 				D3A721FF27296CC100ED26C7 /* SafariView.swift */,
+				D3A722012729779C00ED26C7 /* ShareSheet.swift */,
 				D3781108272894E7002EB1FE /* ImageHandler.swift */,
 				D351996127282EC5001B2DBA /* SearchView.swift */,
 				D351996327282FA8001B2DBA /* FavoritesView.swift */,
@@ -331,6 +334,7 @@
 				D351995E27282D84001B2DBA /* AppTabView.swift in Sources */,
 				D351996A272840F0001B2DBA /* ComicCardView.swift in Sources */,
 				D35199662728301B001B2DBA /* Constants.swift in Sources */,
+				D3A722022729779C00ED26C7 /* ShareSheet.swift in Sources */,
 				D378110D2728A27A002EB1FE /* HomeViewModel.swift in Sources */,
 				D3519976272858D7001B2DBA /* ComicsModel.swift in Sources */,
 			);
@@ -491,7 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
@@ -522,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
