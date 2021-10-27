@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkManager {
     
@@ -50,5 +51,18 @@ class NetworkManager {
             }
             
         }.resume()
+    }
+    
+    func loadImage(_ url: String) -> UIImage {
+        guard let url = URL(string: url) else { return UIImage() }
+        
+        do {
+            let image = try Data(contentsOf: url)
+            return UIImage(data: image) ?? UIImage()
+        } catch {
+            print(error)
+        }
+        
+        return UIImage()
     }
 }
