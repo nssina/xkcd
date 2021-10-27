@@ -10,11 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var homeVM = HomeViewModel()
     
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "xkcd", size: 34)!]
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "xkcd", size: 17)!]
-    }
-    
     var body: some View {
         NavigationView {
             ScrollView {

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AppTabView: View {
+    
+    init() { UINavigationBar().setFont("xkcd", largeSize: 34, inlineSize: 17) }
+    
     var body: some View {
         TabView {
             HomeView()
