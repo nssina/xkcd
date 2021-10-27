@@ -10,6 +10,8 @@ import SwiftUI
 struct ComicCardView: View {
     var comic: ComicModel
     
+    @State private var isShowingSafari = false
+    
     var body: some View {
         ZStack {
             Color(.secondarySystemBackground)
@@ -19,12 +21,13 @@ struct ComicCardView: View {
                 
                 ComicImage(url: comic.imgs[0].sourceURL)
                 
-                ActionAndNumberView(number: comic.id)
+                ActionAndNumberView(number: comic.id, comic: comic)
                 
                 ComicTitleAndDescriptionView(title: comic.title, desc: comic.alt)
                 
                 Button {
-                    
+                    isShowingSafari.toggle()
+                    HapticGenerator.shared.soft()
                 } label: {
                     HStack {
                         Text("Explanation")
@@ -36,6 +39,9 @@ struct ComicCardView: View {
                         
                         Spacer()
                     }
+                }.sheet(isPresented: $isShowingSafari) {
+                    SafariView(number: comic.id)
+                        .ignoresSafeArea()
                 }
             }
             .padding()
@@ -59,6 +65,10 @@ struct ComicImage: View {
 }
 
 struct ActionsView: View {
+    
+    var comic: ComicModel
+    var id: Int
+    
     var body: some View {
         HStack(spacing: 25) {
             Button {
@@ -99,10 +109,11 @@ struct ComicNumberView: View {
 
 struct ActionAndNumberView: View {
     var number: Int
+    var comic: ComicModel
     
     var body: some View {
         HStack {
-            ActionsView()
+            ActionsView(comic: comic, id: number)
             
             Spacer()
             
