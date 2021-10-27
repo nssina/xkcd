@@ -17,7 +17,7 @@ struct AsyncImage: View {
     var body: some View {
         Image(uiImage: UIImage(data: self.imageLoader.imageData) ?? UIImage(named: "Placeholder")!)
             .resizable()
-            .scaledToFill()
+            .scaledToFit()
             .cornerRadius(8)
     }
 }
