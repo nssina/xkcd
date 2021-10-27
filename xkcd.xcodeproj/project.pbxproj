@@ -32,6 +32,9 @@
 		D3A721FE2729251200ED26C7 /* HapticGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A721FD2729251200ED26C7 /* HapticGenerator.swift */; };
 		D3A7220027296CC100ED26C7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A721FF27296CC100ED26C7 /* SafariView.swift */; };
 		D3A722022729779C00ED26C7 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A722012729779C00ED26C7 /* ShareSheet.swift */; };
+		D3A722062729955800ED26C7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A722052729955800ED26C7 /* SearchViewModel.swift */; };
+		D3A7220A2729A73E00ED26C7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A722092729A73E00ED26C7 /* SearchCell.swift */; };
+		D3A7220E2729AF8E00ED26C7 /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A7220D2729AF8E00ED26C7 /* ComicDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		D3A721FD2729251200ED26C7 /* HapticGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticGenerator.swift; sourceTree = "<group>"; };
 		D3A721FF27296CC100ED26C7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		D3A722012729779C00ED26C7 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		D3A722052729955800ED26C7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		D3A722092729A73E00ED26C7 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		D3A7220D2729AF8E00ED26C7 /* ComicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 				D3A722012729779C00ED26C7 /* ShareSheet.swift */,
 				D3781108272894E7002EB1FE /* ImageHandler.swift */,
 				D351996127282EC5001B2DBA /* SearchView.swift */,
+				D3A7220D2729AF8E00ED26C7 /* ComicDetailView.swift */,
+				D3A722092729A73E00ED26C7 /* SearchCell.swift */,
+				D3A722052729955800ED26C7 /* SearchViewModel.swift */,
 				D351996327282FA8001B2DBA /* FavoritesView.swift */,
 				D351993227282CF5001B2DBA /* Assets.xcassets */,
 				D351993727282CF5001B2DBA /* Persistence.swift */,
@@ -319,11 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D351993827282CF5001B2DBA /* Persistence.swift in Sources */,
+				D3A7220A2729A73E00ED26C7 /* SearchCell.swift in Sources */,
 				D351992F27282CF4001B2DBA /* xkcdApp.swift in Sources */,
 				D351996827283667001B2DBA /* Color+Ext.swift in Sources */,
 				D3A721FE2729251200ED26C7 /* HapticGenerator.swift in Sources */,
 				D3A721FC27291A4800ED26C7 /* UINavigationBar+Ext.swift in Sources */,
 				D351996227282EC5001B2DBA /* SearchView.swift in Sources */,
+				D3A722062729955800ED26C7 /* SearchViewModel.swift in Sources */,
 				D35199742728566B001B2DBA /* NetworkManager.swift in Sources */,
 				D351996427282FA8001B2DBA /* FavoritesView.swift in Sources */,
 				D351996027282EBF001B2DBA /* HomeView.swift in Sources */,
@@ -337,6 +348,7 @@
 				D3A722022729779C00ED26C7 /* ShareSheet.swift in Sources */,
 				D378110D2728A27A002EB1FE /* HomeViewModel.swift in Sources */,
 				D3519976272858D7001B2DBA /* ComicsModel.swift in Sources */,
+				D3A7220E2729AF8E00ED26C7 /* ComicDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +507,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
@@ -526,7 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
