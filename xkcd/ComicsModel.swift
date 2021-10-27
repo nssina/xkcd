@@ -8,14 +8,22 @@
 import Foundation
 
 // MARK: - ComicModel
-struct ComicModel: Codable {
-    
+struct ComicModel: Codable, Identifiable, Comparable, Hashable {
     let id: Int
     let publishedAt, news, safeTitle, title: String
     let transcript, alt: String
     let sourceURL, explainURL: String
     let interactiveURL: String?
     let imgs: [ComicImageModel]
+    
+    static func < (lhs: ComicModel, rhs: ComicModel) -> Bool {
+        lhs.id < rhs.id
+    }
+    
+    
+    static func == (lhs: ComicModel, rhs: ComicModel) -> Bool {
+        lhs.id == rhs.id
+    }
 
     enum CodingKeys: String, CodingKey {
         case id, publishedAt, news, safeTitle, title, transcript, alt
@@ -27,7 +35,7 @@ struct ComicModel: Codable {
 }
 
 // MARK: - ComicImageModel
-struct ComicImageModel: Codable {
+struct ComicImageModel: Codable, Hashable {
     let height, width: Int
     let ratio: Double
     let sourceURL: String
