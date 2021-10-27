@@ -79,7 +79,7 @@ struct ActionsView: View {
                 Image(systemName: SFSymbols.favorite)
                     .resizable()
                     .foregroundColor(.primary)
-                    .frame(width: 25, height: 25)
+                    .frame(width: 20, height: 20)
             }
             
             Button {
@@ -89,7 +89,7 @@ struct ActionsView: View {
                 Image(systemName: SFSymbols.send)
                     .resizable()
                     .foregroundColor(.primary)
-                    .frame(width: 25, height: 25)
+                    .frame(width: 20, height: 20)
             }
             .sheet(isPresented: $isShowingShareSheet) {
                 ShareSheet(activityItems: [network.loadImage(comic.imgs[0].sourceURL), comic.title, comic.alt])
@@ -142,6 +142,7 @@ struct ComicTitleAndDescriptionView: View {
                     .font(.custom(CustomFont.xkcd, size: 15))
                     .minimumScaleFactor(0.75)
                     .lineLimit(3)
+                    .foregroundColor(.secondary)
             }
             Spacer()
         }
