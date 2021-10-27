@@ -21,7 +21,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-    func getComics() {
+    private func getComics() {
         NetworkManager.shared.getComics(since: page) { result in
             switch result {
             case .success(let comics):
