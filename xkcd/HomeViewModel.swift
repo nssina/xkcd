@@ -27,9 +27,11 @@ class HomeViewModel: ObservableObject {
             case .success(let comics):
                 DispatchQueue.main.async {
                     self.comics = comics.reversed()
+                    HapticGenerator.shared.success()
                 }
             case .failure(let error):
                 print(error)
+                HapticGenerator.shared.error()
             }
         }
     }
