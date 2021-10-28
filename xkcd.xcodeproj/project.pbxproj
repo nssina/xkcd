@@ -10,7 +10,6 @@
 		D31EFFC5272AF0F100CA3C4A /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31EFFC4272AF0F100CA3C4A /* FavoritesDetailView.swift */; };
 		D31EFFC7272AF1B100CA3C4A /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31EFFC6272AF1B100CA3C4A /* FavoriteCell.swift */; };
 		D31EFFC9272B068600CA3C4A /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31EFFC8272B068600CA3C4A /* String+Ext.swift */; };
-		D31EFFCB272B1ABA00CA3C4A /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31EFFCA272B1ABA00CA3C4A /* Date+Ext.swift */; };
 		D351992F27282CF4001B2DBA /* xkcdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351992E27282CF4001B2DBA /* xkcdApp.swift */; };
 		D351993327282CF5001B2DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D351993227282CF5001B2DBA /* Assets.xcassets */; };
 		D351993627282CF5001B2DBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D351993527282CF5001B2DBA /* Preview Assets.xcassets */; };
@@ -62,7 +61,6 @@
 		D31EFFC4272AF0F100CA3C4A /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
 		D31EFFC6272AF1B100CA3C4A /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		D31EFFC8272B068600CA3C4A /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		D31EFFCA272B1ABA00CA3C4A /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		D351992B27282CF4001B2DBA /* xkcd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xkcd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D351992E27282CF4001B2DBA /* xkcdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdApp.swift; sourceTree = "<group>"; };
 		D351993227282CF5001B2DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				D378110C2728A27A002EB1FE /* HomeViewModel.swift */,
 				D3519969272840F0001B2DBA /* ComicCardView.swift */,
 				D31EFFC8272B068600CA3C4A /* String+Ext.swift */,
-				D31EFFCA272B1ABA00CA3C4A /* Date+Ext.swift */,
 				D3A721FF27296CC100ED26C7 /* SafariView.swift */,
 				D3A722012729779C00ED26C7 /* ShareSheet.swift */,
 				D3781108272894E7002EB1FE /* ImageHandler.swift */,
@@ -354,7 +351,6 @@
 				D3A7220027296CC100ED26C7 /* SafariView.swift in Sources */,
 				D3781109272894E7002EB1FE /* ImageHandler.swift in Sources */,
 				D35199782728595F001B2DBA /* XCError.swift in Sources */,
-				D31EFFCB272B1ABA00CA3C4A /* Date+Ext.swift in Sources */,
 				D351995E27282D84001B2DBA /* AppTabView.swift in Sources */,
 				D31EFFC5272AF0F100CA3C4A /* FavoritesDetailView.swift in Sources */,
 				D351996A272840F0001B2DBA /* ComicCardView.swift in Sources */,
@@ -523,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
@@ -554,7 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"xkcd/Preview Content\"";
 				DEVELOPMENT_TEAM = G5MW59W3Y4;
 				ENABLE_PREVIEWS = YES;
