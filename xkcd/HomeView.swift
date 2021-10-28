@@ -15,6 +15,7 @@ struct HomeView: View {
             if viewModel.comics.isEmpty {
                 ProgressView()
                     .navigationBarTitle("xkcd")
+                    .navigationViewStyle(StackNavigationViewStyle())
             } else {
                 ScrollView {
                     LazyVStack(spacing: -20) {
@@ -29,6 +30,7 @@ struct HomeView: View {
                 .navigationBarTitle("xkcd")
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

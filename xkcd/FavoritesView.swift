@@ -32,6 +32,7 @@ struct FavoritesView: View {
                 .navigationTitle("Favorites")
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func deleteItem(index: IndexSet) {
