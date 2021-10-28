@@ -74,8 +74,13 @@ struct ComicCardView_Previews: PreviewProvider {
 struct ComicImage: View {
     var url: String
     
+    @GestureState private var scale: CGFloat = 1.0
+    
     var body: some View {
-        AsyncImage(url)
+        AsyncImage(url).scaleEffect(scale)
+            .gesture(MagnificationGesture().updating($scale, body: { newValue, scale, _ in
+                scale = newValue
+            }))
     }
 }
 
