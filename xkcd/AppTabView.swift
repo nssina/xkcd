@@ -23,7 +23,7 @@ struct AppTabView: View {
                 }
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage: SFSymbols.fillFavorite)
+                    Label("Favorites", systemImage: SFSymbols.favorited)
                 }
         }
         .accentColor(.primary)

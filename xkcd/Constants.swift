@@ -12,7 +12,7 @@ enum SFSymbols {
     static let comics = "rectangle.3.offgrid.bubble.left.fill"
     static let search = "magnifyingglass"
     static let favorite = "star"
-    static let fillFavorite = "star.fill"
+    static let favorited = "star.fill"
     static let send = "paperplane"
     static let arrow = "arrow.forward"
 }
