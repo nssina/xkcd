@@ -44,6 +44,11 @@ struct SearchView: View {
                                 SearchCell(comic: item)
                             }
                         }
+                        .listRowBackground(Color(UIColor.secondarySystemBackground))
+                    }
+                    .listStyle(InsetGroupedListStyle())
+                    .onAppear {
+                        UITableView.appearance().backgroundColor = UIColor.systemBackground
                     }
                 }
             }

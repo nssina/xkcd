@@ -25,6 +25,11 @@ struct FavoritesView: View {
                         }
                     }
                     .onDelete(perform: deleteItem)
+                    .listRowBackground(Color(UIColor.secondarySystemBackground))
+                }
+                .listStyle(InsetGroupedListStyle())
+                .onAppear {
+                    UITableView.appearance().backgroundColor = UIColor.systemBackground
                 }
                 .toolbar {
                     EditButton()
