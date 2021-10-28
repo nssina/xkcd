@@ -15,7 +15,10 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             if favorites.isEmpty {
-                Text("View is empty")
+                Text("No Favorites?\nAdd one on the home screen.")
+                    .multilineTextAlignment(.center)
+                    .font(.custom(CustomFont.xkcd, size: 28))
+                    .foregroundColor(.secondary)
                     .navigationTitle("Favorites")
             } else {
                 List {
