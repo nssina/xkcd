@@ -65,4 +65,17 @@ class NetworkManager {
         
         return UIImage()
     }
+    
+    func getImageData(_ url: String) -> Data {
+        guard let url = URL(string: url) else { return Data() }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            return data
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return Data()
+    }
 }
