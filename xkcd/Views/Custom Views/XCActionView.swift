@@ -14,7 +14,7 @@ struct XCActionView: View {
     private let network = NetworkManager.shared
     
     var comic: ComicModel
-    var isFavorited: Bool
+    @State var isFavorited: Bool
     var id: Int
     
     var body: some View {
@@ -60,6 +60,7 @@ struct XCActionView: View {
 
             do {
                 try viewContext.save()
+                isFavorited.toggle()
                 HapticGenerator.shared.success()
             } catch {
                 // This error should handle for the application release.
