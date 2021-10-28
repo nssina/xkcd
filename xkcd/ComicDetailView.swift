@@ -67,6 +67,7 @@ struct ComicDetailView: View {
         }
         .navigationTitle("Comic")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear { HapticGenerator.shared.light() }
     }
     
     private func checkFavorited(for id: Int) -> Bool {

@@ -67,6 +67,7 @@ struct FavoritesDetailView: View {
         }
         .navigationTitle("Comic")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear { HapticGenerator.shared.light() }
     }
 }
 

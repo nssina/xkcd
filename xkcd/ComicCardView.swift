@@ -127,6 +127,7 @@ struct ActionsView: View {
 
             do {
                 try viewContext.save()
+                HapticGenerator.shared.success()
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
