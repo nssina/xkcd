@@ -9,10 +9,10 @@ import SwiftUI
 import SafariServices
 
 struct SafariView: UIViewControllerRepresentable {
-    let number: Int
+    let url: String
     
     func makeUIViewController(context: Context) -> SFSafariViewController {
-        return SFSafariViewController(url: URL(string: "https://www.explainxkcd.com/wiki/index.php/\(number)")!)
+        return SFSafariViewController(url: URL(string: url)!)
     }
     
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) { }
@@ -20,6 +20,6 @@ struct SafariView: UIViewControllerRepresentable {
 
 struct SafariView_Previews: PreviewProvider {
     static var previews: some View {
-        SafariView(number: 1)
+        SafariView(url: "https://shortcut.io/") // =)
     }
 }

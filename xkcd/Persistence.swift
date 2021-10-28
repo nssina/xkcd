@@ -21,7 +21,7 @@ struct PersistenceController {
             comic.id = Int16(1)
             comic.image = Data()
             comic.date = "Oct 28, 2021"
-            comic.explainURL = "https://shortcut.io" // =)
+            comic.explainURL = "https://shortcut.io/" // =)
         }
         
         do {
