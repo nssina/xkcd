@@ -12,6 +12,9 @@ struct ComicCardView: View {
     
     @State private var isShowingSafari = false
     
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Favorite.title, ascending: true)], animation: .default)
+    private var favorites: FetchedResults<Favorite>
+    
     var body: some View {
         ZStack {
             Color(.secondarySystemBackground)
@@ -21,7 +24,7 @@ struct ComicCardView: View {
                 
                 ComicImage(url: comic.imgs[0].sourceURL)
                 
-                ActionAndNumberView(number: comic.id, comic: comic)
+                ActionAndNumberView(number: comic.id, comic: comic, isFavorited: checkFavorited(for: comic.id))
                 
                 ComicTitleAndDescriptionView(title: comic.title, desc: comic.alt)
                 
@@ -30,23 +33,35 @@ struct ComicCardView: View {
                     HapticGenerator.shared.soft()
                 } label: {
                     HStack {
-                        Text("Explanation")
-                            .font(.custom(CustomFont.xkcd, size: 17))
-                            .foregroundColor(.blue)
-                        Image(systemName: SFSymbols.arrow)
-                            .font(Font.body.weight(.bold))
-                            .foregroundColor(.blue)
-                        
-                        Spacer()
+                        HStack {
+                            Text("Explanation")
+                                .font(.custom(CustomFont.xkcd, size: 17))
+                                .foregroundColor(.blue)
+                            Image(systemName: SFSymbols.arrow)
+                                .font(Font.body.weight(.bold))
+                                .foregroundColor(.blue)
+                        }
+                        .sheet(isPresented: $isShowingSafari) {
+                            SafariView(url: comic.explainURL)
+                                .ignoresSafeArea()
+                        }
                     }
-                }.sheet(isPresented: $isShowingSafari) {
-                    SafariView(number: comic.id)
-                        .ignoresSafeArea()
+                    Spacer()
+                    Text(comic.publishedAt.changeFormat())
+                        .font(.custom(CustomFont.xkcd, size: 13))
+                        .foregroundColor(.secondary)
                 }
             }
             .padding()
         }
         .padding()
+    }
+    
+    private func checkFavorited(for id: Int) -> Bool {
+        for i in favorites {
+            guard Int(i.id) != id else { return true }
+        }
+        return false
     }
 }
 
@@ -65,18 +80,21 @@ struct ComicImage: View {
 }
 
 struct ActionsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @State private var isShowingShareSheet = false
     private let network = NetworkManager.shared
     
     var comic: ComicModel
+    var isFavorited: Bool
     var id: Int
     
     var body: some View {
         HStack(spacing: 25) {
             Button {
-                
+                saveComic()
             } label: {
-                Image(systemName: SFSymbols.favorite)
+                Image(systemName: isFavorited ? SFSymbols.favorited : SFSymbols.favorite)
                     .resizable()
                     .foregroundColor(.primary)
                     .frame(width: 20, height: 20)
@@ -93,6 +111,25 @@ struct ActionsView: View {
             }
             .sheet(isPresented: $isShowingShareSheet) {
                 ShareSheet(activityItems: [network.loadImage(comic.imgs[0].sourceURL), comic.title, comic.alt])
+            }
+        }
+    }
+    
+    private func saveComic() {
+        withAnimation {
+            let newFavotite = Favorite(context: viewContext)
+            newFavotite.alt = comic.alt
+            newFavotite.id = Int16(comic.id)
+            newFavotite.image = network.getImageData(comic.imgs[0].sourceURL)
+            newFavotite.title = comic.title
+            newFavotite.date = comic.publishedAt.changeFormat()
+            newFavotite.explainURL = comic.explainURL
+
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
@@ -116,10 +153,11 @@ struct ComicNumberView: View {
 struct ActionAndNumberView: View {
     var number: Int
     var comic: ComicModel
+    var isFavorited: Bool
     
     var body: some View {
         HStack {
-            ActionsView(comic: comic, id: number)
+            ActionsView(comic: comic, isFavorited: isFavorited, id: number)
             
             Spacer()
             
