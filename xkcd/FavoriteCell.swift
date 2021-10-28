@@ -12,6 +12,11 @@ struct FavoriteCell: View {
     
     var body: some View {
         HStack {
+            Image(uiImage: UIImage(data: comic.image!)!)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 80, height: 80)
+            
             VStack(alignment: .leading) {
                 HStack {
                     Text(comic.title!)
