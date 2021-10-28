@@ -10,6 +10,7 @@ import SwiftUI
 
 class SearchViewModel: ObservableObject {
     @Published var comics = ComicsModel()
+    @Published var searchText = ""
     
     init() { getComics() }
     
@@ -23,11 +24,12 @@ class SearchViewModel: ObservableObject {
             switch result {
             case .success(let comics):
                 DispatchQueue.main.async {
+                    // Reversing the array to show new comics first.
                     self.comics = comics.reversed()
                     HapticGenerator.shared.success()
                 }
             case .failure(let error):
-                print(error)
+                print(error.localizedDescription)
                 HapticGenerator.shared.error()
             }
         }

@@ -6,7 +6,7 @@
 //
 
 import CoreData
-
+import SwiftUI
 struct PersistenceController {
     static let shared = PersistenceController()
     let container: NSPersistentContainer
@@ -15,18 +15,20 @@ struct PersistenceController {
         let controller = PersistenceController(inMemory: true)
         let viewContext = controller.container.viewContext
         for _ in 0..<10 {
-            let comic = Favorite(context: controller.container.viewContext)
+            // Making example data for canvas preview.
+            let comic = Favorite(context: viewContext)
             comic.title = "Sina"
             comic.alt = "alt"
             comic.id = Int16(1)
             comic.image = Data()
             comic.date = "Oct 28, 2021"
-            comic.explainURL = "https://shortcut.io/" // =)
+            comic.explainURL = Examples.url
         }
         
         do {
             try viewContext.save()
         } catch {
+            // This error should handle for the application release.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
@@ -47,16 +49,5 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-    }
-    
-    func saveComic() {
-        let context = container.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                print("Error occurs while saving comic: \(error.localizedDescription)")
-            }
-        }
     }
 }

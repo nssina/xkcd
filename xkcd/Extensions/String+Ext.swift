@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    // For changing the date format from iso 8601 to custom format.
     func changeFormat(inputFormat: String = "yyyy-MM-dd'T'HH:mm:ss.sssZ", outputFormat: String = "MMM d, yyyy") -> String {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = inputFormat

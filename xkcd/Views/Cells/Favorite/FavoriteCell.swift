@@ -24,7 +24,7 @@ struct FavoriteCell: View {
                         .minimumScaleFactor(0.75)
                         .font(.custom(CustomFont.xkcd, size: 20))
                     Spacer()
-                    ComicNumberView(number: Int(comic.id))
+                    XCNumberView(number: Int(comic.id))
                 }
                 
                 Text(comic.alt!)

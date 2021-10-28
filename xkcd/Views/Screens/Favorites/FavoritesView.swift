@@ -40,6 +40,7 @@ struct FavoritesView: View {
                 .navigationTitle("Favorites")
             }
         }
+        // For disabling split screen on iPad.
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
@@ -51,6 +52,7 @@ struct FavoritesView: View {
                 try viewContext.save()
                 HapticGenerator.shared.success()
             } catch {
+                // This error should handle for the application release.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

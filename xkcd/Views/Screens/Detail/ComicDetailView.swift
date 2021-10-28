@@ -21,10 +21,10 @@ struct ComicDetailView: View {
                     Text(comic.title)
                         .font(.custom(CustomFont.xkcd, size: 20))
                     
-                    AsyncImage(comic.imgs[0].sourceURL)
+                    XCImageView(url: comic.imgs[0].sourceURL)
                     
                     HStack {
-                        ButtonsView(comic: comic, isFavorited: checkFavorited(for: comic.id), id: comic.id)
+                        XCActionView(comic: comic, isFavorited: checkFavorited(for: comic.id), id: comic.id)
                         Spacer()
                         Button {
                             isShowingSafari.toggle()
@@ -80,41 +80,6 @@ struct ComicDetailView: View {
 
 struct ComicDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ComicDetailView(comic: ComicModel(id: 2533, publishedAt: "", news: "", safeTitle: "", title: "test", transcript: "", alt: "test", sourceURL: "", explainURL: "", interactiveURL: "", imgs: [ComicImageModel(height: 0, width: 0, ratio: 0.0, sourceURL: "", size: "")]))
-    }
-}
-
-struct ButtonsView: View {
-    @State private var isShowingShareSheet = false
-    private let network = NetworkManager.shared
-    
-    var comic: ComicModel
-    var isFavorited: Bool
-    var id: Int
-    
-    var body: some View {
-        HStack(spacing: 25) {
-            Button {
-                
-            } label: {
-                Image(systemName: isFavorited ? SFSymbols.favorited : SFSymbols.favorite)
-                    .resizable()
-                    .foregroundColor(.primary)
-                    .frame(width: 25, height: 25)
-            }
-            
-            Button {
-                isShowingShareSheet.toggle()
-                HapticGenerator.shared.soft()
-            } label: {
-                Image(systemName: SFSymbols.send)
-                    .resizable()
-                    .foregroundColor(.primary)
-                    .frame(width: 25, height: 25)
-            }
-            .sheet(isPresented: $isShowingShareSheet) {
-                ShareSheet(activityItems: [network.loadImage(comic.imgs[0].sourceURL), comic.title, comic.alt])
-            }
-        }
+        ComicDetailView(comic: Examples.sampleComic)
     }
 }

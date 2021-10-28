@@ -15,12 +15,13 @@ struct HomeView: View {
             if viewModel.comics.isEmpty {
                 ProgressView()
                     .navigationBarTitle("xkcd")
+                // For disabling split screen on iPad.
                     .navigationViewStyle(StackNavigationViewStyle())
             } else {
                 ScrollView {
                     LazyVStack(spacing: -20) {
                         ForEach(viewModel.comics, id:\.id) { item in
-                            ComicCardView(comic: item)
+                            XCCardView(comic: item)
                                 .onAppear {
                                     viewModel.loadMoreContent(currentItem: item)
                                 }
@@ -30,6 +31,7 @@ struct HomeView: View {
                 .navigationBarTitle("xkcd")
             }
         }
+        // For disabling split screen on iPad.
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

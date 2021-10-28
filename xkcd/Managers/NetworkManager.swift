@@ -8,11 +8,16 @@
 import Foundation
 import UIKit
 
+/*
+ In this app, we make simple network requests so I just use the URLSession and do not add the Alamofire.
+ */
+
 class NetworkManager {
     
     static let shared = NetworkManager()
     private let baseURL = "https://api.xkcdy.com/"
     
+    // MARK: - Getting all commics
     func getComics(since: Int, completion: @escaping (Result<ComicsModel, XCError>) -> Void) {
         let endpoint = baseURL + "comics"
         
@@ -53,19 +58,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func loadImage(_ url: String) -> UIImage {
-        guard let url = URL(string: url) else { return UIImage() }
-        
-        do {
-            let image = try Data(contentsOf: url)
-            return UIImage(data: image) ?? UIImage()
-        } catch {
-            print(error)
-        }
-        
-        return UIImage()
-    }
-    
+    // MARK: - Getting image data for saving in the database
     func getImageData(_ url: String) -> Data {
         guard let url = URL(string: url) else { return Data() }
         

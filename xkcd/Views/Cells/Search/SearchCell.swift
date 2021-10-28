@@ -19,7 +19,7 @@ struct SearchCell: View {
                         .minimumScaleFactor(0.75)
                         .font(.custom(CustomFont.xkcd, size: 20))
                     Spacer()
-                    ComicNumberView(number: comic.id)
+                    XCNumberView(number: comic.id)
                 }
                 
                 Text(comic.alt)
@@ -35,6 +35,6 @@ struct SearchCell: View {
 
 struct SearchCell_Previews: PreviewProvider {
     static var previews: some View {
-        SearchCell(comic: ComicModel(id: 0, publishedAt: "", news: "", safeTitle: "", title: "", transcript: "", alt: "", sourceURL: "", explainURL: "", interactiveURL: "", imgs: [ComicImageModel(height: 0, width: 0, ratio: 0.0, sourceURL: "", size: "")]))
+        SearchCell(comic: Examples.sampleComic)
     }
 }

@@ -20,3 +20,11 @@ enum SFSymbols {
 enum CustomFont {
     static let xkcd = "xkcd"
 }
+
+enum Examples {
+    static let url = "https://shortcut.io/" // =)
+    static var sampleComic = ComicModel(id: 0, publishedAt: "", news: "", safeTitle: "", title: "", transcript: "", alt: "", sourceURL: "", explainURL: "", interactiveURL: "", imgs: [ComicImageModel(height: 0, width: 0, ratio: 0.0, sourceURL: "", size: "")])
+    static let number = 0
+    static let bool = false
+    static let string = "EMPTY"
+}

@@ -54,6 +54,7 @@ struct SearchView: View {
             }
             .navigationBarTitle("Search")
         }
+        // For disabling split screen on iPad.
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
