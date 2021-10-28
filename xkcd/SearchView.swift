@@ -33,7 +33,7 @@ struct SearchView: View {
                 .padding([.trailing, .leading], 15)
                 
                 List {
-                    ForEach(searchInComics()) { item in
+                    ForEach(viewModel.searchInComics(in: searchText)) { item in
                         NavigationLink(destination: ComicDetailView(comic: item)) {
                             SearchCell(comic: item)
                         }
@@ -42,10 +42,6 @@ struct SearchView: View {
             }
             .navigationBarTitle("Search")
         }
-    }
-    
-    private func searchInComics() -> ComicsModel {
-        return viewModel.comics.filter { $0.title.lowercased().contains(searchText.lowercased()) || $0.alt.lowercased().contains(searchText.lowercased()) || String($0.id).lowercased().contains(searchText.lowercased()) || searchText.isEmpty }
     }
 }
 
