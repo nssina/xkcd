@@ -24,6 +24,7 @@ struct SearchView: View {
                             .padding(.leading, 5)
                             .foregroundColor(.secondary)
                         TextField("Titles, numbers or alts", text: $searchText)
+                            .font(.custom(CustomFont.xkcd, size: 15))
                             .frame(height: 34)
                             .cornerRadius(8)
                     }
@@ -32,10 +33,16 @@ struct SearchView: View {
                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1))
                 .padding([.trailing, .leading], 15)
                 
-                List {
-                    ForEach(viewModel.searchInComics(in: searchText)) { item in
-                        NavigationLink(destination: ComicDetailView(comic: item)) {
-                            SearchCell(comic: item)
+                if viewModel.comics.isEmpty {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                } else {
+                    List {
+                        ForEach(viewModel.searchInComics(in: searchText)) { item in
+                            NavigationLink(destination: ComicDetailView(comic: item)) {
+                                SearchCell(comic: item)
+                            }
                         }
                     }
                 }
