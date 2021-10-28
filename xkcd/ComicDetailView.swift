@@ -11,6 +11,8 @@ struct ComicDetailView: View {
     var comic: ComicModel
     
     @State private var isShowingSafari = false
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Favorite.title, ascending: true)], animation: .default)
+    private var favorites: FetchedResults<Favorite>
     
     var body: some View {
         ScrollView {
@@ -22,7 +24,7 @@ struct ComicDetailView: View {
                     AsyncImage(comic.imgs[0].sourceURL)
                     
                     HStack {
-                        ButtonsView(comic: comic, id: comic.id)
+                        ButtonsView(comic: comic, isFavorited: checkFavorited(for: comic.id), id: comic.id)
                         Spacer()
                         Button {
                             isShowingSafari.toggle()
@@ -37,7 +39,7 @@ struct ComicDetailView: View {
                                     .foregroundColor(.blue)
                             }
                         }.sheet(isPresented: $isShowingSafari) {
-                            SafariView(number: comic.id)
+                            SafariView(url: comic.explainURL)
                                 .ignoresSafeArea()
                         }
                     }
@@ -52,6 +54,10 @@ struct ComicDetailView: View {
                     }
                     .padding()
                     
+                    Text(comic.publishedAt.changeFormat())
+                        .font(.custom(CustomFont.xkcd, size: 13))
+                        .foregroundColor(.secondary)
+                    
                     Spacer()
                 }
                 .padding(.top, 30)
@@ -61,6 +67,13 @@ struct ComicDetailView: View {
         }
         .navigationTitle("Comic")
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private func checkFavorited(for id: Int) -> Bool {
+        for i in favorites {
+            guard Int(i.id) != id else { return true }
+        }
+        return false
     }
 }
 
@@ -75,6 +88,7 @@ struct ButtonsView: View {
     private let network = NetworkManager.shared
     
     var comic: ComicModel
+    var isFavorited: Bool
     var id: Int
     
     var body: some View {
@@ -82,7 +96,7 @@ struct ButtonsView: View {
             Button {
                 
             } label: {
-                Image(systemName: SFSymbols.favorite)
+                Image(systemName: isFavorited ? SFSymbols.favorited : SFSymbols.favorite)
                     .resizable()
                     .foregroundColor(.primary)
                     .frame(width: 25, height: 25)
