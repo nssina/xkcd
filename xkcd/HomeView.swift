@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeVM = HomeViewModel()
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack(spacing: -20) {
-                    ForEach(homeVM.comics, id:\.id) { item in
-                        ComicCardView(comic: item)
-                            .onAppear {
-                                homeVM.loadMoreContent(currentItem: item)
-                            }
+            if viewModel.comics.isEmpty {
+                ProgressView()
+                    .navigationBarTitle("xkcd")
+            } else {
+                ScrollView {
+                    LazyVStack(spacing: -20) {
+                        ForEach(viewModel.comics, id:\.id) { item in
+                            ComicCardView(comic: item)
+                                .onAppear {
+                                    viewModel.loadMoreContent(currentItem: item)
+                                }
+                        }
                     }
                 }
+                .navigationBarTitle("xkcd")
             }
-            .navigationBarTitle("xkcd")
         }
     }
 }
