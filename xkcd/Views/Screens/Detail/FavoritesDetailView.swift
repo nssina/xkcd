@@ -38,7 +38,7 @@ struct FavoritesDetailView: View {
                                     .font(Font.body.weight(.bold))
                                     .foregroundColor(.blue)
                             }
-                        }.sheet(isPresented: $isShowingSafari) {
+                        }.fullScreenCover(isPresented: $isShowingSafari) {
                             SafariView(url: favorite.explainURL!)
                                 .ignoresSafeArea()
                         }
