@@ -3,7 +3,8 @@ A xkcd client written in SwiftUI.
 
 ![xkcd-banner](https://sinarabiei.com/xkcd/repo-banner.png)
 
-## Arcitucture:
+## Architechture:
+* Tried to use MVVM but with CoreData... If you know, you know.
 
 ## Features:
 * Supports Dark/Light mode
