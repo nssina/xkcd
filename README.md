@@ -1,3 +1,3 @@
 # xkcd
 xkcd app with SwiftUI
-![](https://sinarabiei.com/xkcd/repo-banner.png)
+![xkcd-banner](https://sinarabiei.com/xkcd/repo-banner.png)
